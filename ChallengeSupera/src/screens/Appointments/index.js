@@ -80,10 +80,19 @@ export default () => {
             {totalValue > 250 ? (
               <TotalItem>SubTotal: {totalValue}</TotalItem>
             ) : (
-              <TotalItem>
-                Total a Pagar:{' '}
-                {prod.length > 0 ? prod.length * 10 + totalValue : 0}
-              </TotalItem>
+              <>
+                {totalValue > 250 ? (
+                  <TotalItem>
+                    Total a Pagar com Frete:{' '}
+                    {prod.length > 0 ? prod.length * 10 + totalValue : 0}
+                  </TotalItem>
+                ) : (
+                  <TotalItem>
+                    Total a Pagar sem Frete:{' '}
+                    {prod.length > 0 ? prod.length * 10 + totalValue : 0}
+                  </TotalItem>
+                )}
+              </>
             )}
           </>
           <Picker

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {Text, View} from 'react-native';
+import {Text, View, Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import Swiper from 'react-native-swiper';
 import data from '../../json/products.json';
@@ -75,10 +75,20 @@ export default () => {
     if (item != '') {
       dispatch(addItem(item));
       setTimeout(() => {
-        alert('Produto adicionado com Sucesso');
+        Alert.alert(
+          'Atenção',
+          'Produto Adicionado Com Sucesso',
+          [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+          {cancelable: false},
+        );
       }, 150);
     } else {
-      alert('Erro ao Adicionar o produto');
+      Alert.alert(
+        'Atenção',
+        'Erro ao Adicionar o produto',
+        [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+        {cancelable: false},
+      );
     }
   }
   const handleBack = () => {

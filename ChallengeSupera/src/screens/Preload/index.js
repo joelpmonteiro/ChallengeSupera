@@ -3,8 +3,6 @@ import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {Container, LoadingIcon} from './styles';
 
-import Logo from '../../assets/Teste.svg';
-
 export default () => {
   const navigation = useNavigation();
   useEffect(() => {
@@ -20,7 +18,6 @@ export default () => {
 
   return (
     <Container>
-      <Logo width="100%" height="160" />
       <LoadingIcon size="large" color="#FFFFFF" />
     </Container>
   );
